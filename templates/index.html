@@ -49,7 +49,7 @@ div {
 <div> Please select a state for which you want to forecast Natural Gas Consumption. The Short-Term forecast horizon is defined as 3-6months and Long-Term as 9-12months</div>
 
 <div>
-<form action="http://127.0.0.1:5000/result" method="POST">
+<form action="{{ url_for('predict')}}" method="POST">
 	<label for="state">State</label>
 	<label for="state">State</label>
 	<select id="state" name="state">
