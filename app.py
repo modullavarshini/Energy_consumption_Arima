@@ -34,7 +34,7 @@ def ValuePredictor(state, steps_ahead):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/predict', methods = ['POST', 'GET'])
 def predict():
