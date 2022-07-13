@@ -15,7 +15,7 @@ warnings.simplefilter("ignore")
 app = Flask(__name__)
 
 # load the data
-df = pd.read_csv("/Users/varshini/AMPBA/FP2/Natural Gas.csv")
+df = pd.read_csv("Natural Gas.csv")
 df['Date'] = pd.to_datetime(df['Date'],dayfirst=True)
 df['Date'] = df['Date'].dt.date
 df.columns = [col_name.lower() for col_name in df.columns]
@@ -28,7 +28,7 @@ hierarchy_df = hierarchy_df.resample("MS").sum()
 
 
 def ValuePredictor(state, steps_ahead):
-    loaded_model = pickle.load(open("/Users/varshini/AMPBA/FP2/auto-arima.pckl", "rb"))
+    loaded_model = pickle.load(open("auto-arima.pckl", "rb"))
     result = loaded_model.predict(steps_ahead=steps_ahead)
     return result
 
