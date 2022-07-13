@@ -32,6 +32,10 @@ def ValuePredictor(state, steps_ahead):
     result = loaded_model.predict(steps_ahead=steps_ahead)
     return result
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 @app.route('/predict', methods = ['POST', 'GET'])
 def predict():
     if request.method == 'POST':
